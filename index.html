@@ -1,1 +1,170 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+        }
+
+        section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #f0f;
+            text-shadow: 0 0 10px #f0f, 0 0 20px #f0f, 0 0 30px #f0f;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .neon-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: transparent;
+            border: 2px solid #0ff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .neon-button:hover {
+            background-color: #0ff;
+            color: #0a0a0a;
+            box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h1>About Us</h1>
+                <p>We are a cutting-edge company specializing in neon-inspired designs and technology.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Our Projects</h2>
+                <p>Explore our innovative projects that push the boundaries of neon technology.</p>
+                <a href="#" class="neon-button">View Projects</a>
+            </div>
+        </section>
+
+        <section id="donate">
+            <div class="container">
+                <h2>Donate</h2>
+                <p>Support our mission to bring more neon to the world.</p>
+                <a href="#" class="neon-button">Donate Now</a>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>We offer a range of neon-related services to meet your needs.</p>
+                <a href="#" class="neon-button">Learn More</a>
+            </div>
+        </section>
+
+        <section id="shop">
+            <div class="container">
+                <h2>Shop</h2>
+                <p>Browse our collection of neon products and accessories.</p>
+                <a href="#" class="neon-button">Visit Shop</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for any inquiries or collaborations.</p>
+                <a href="#" class="neon-button">Contact Now</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

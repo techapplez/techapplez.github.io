@@ -140,3 +140,133 @@
     </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>techapplez</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                        url('https://images.unsplash.com/photo-1625225233840-695456021cde?q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Share Tech Mono', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(125deg, #00000000 0%, #2020ff22 40%, #00000000 60%),
+                linear-gradient(350deg, #00000000 0%, #ff20ff22 40%, #00000000 60%);
+            animation: gradient 8s ease infinite;
+            z-index: 1;
+        }
+
+        .logo {
+            color: #8A8FFF;
+            font-size: 3em;
+            margin-bottom: 50px;
+            text-shadow: 0 0 10px rgba(138, 143, 255, 0.5),
+                         0 0 20px rgba(138, 143, 255, 0.3),
+                         0 0 30px rgba(138, 143, 255, 0.2);
+            letter-spacing: 2px;
+            z-index: 2;
+            animation: flicker 3s infinite alternate;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 40px;
+            background: rgba(20, 20, 35, 0.8);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(138, 143, 255, 0.2);
+            z-index: 2;
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #8A8FFF, #FF8AFF);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: inherit;
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .grid-item:hover .icon::after {
+            opacity: 0.5;
+            filter: blur(10px);
+        }
+
+        .text {
+            color: #8A8FFF;
+            font-size: 1.2em;
+            text-transform: lowercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(138, 143, 255, 0.5);
+        }
+
+        @keyframes gradient {
+            0% { transform: translateX(-50%) translateY(-50%) }
+            50% { transform: translateX(50%) translateY(50%) }
+            100% { transform: translateX(-50%) translateY(-50%) }
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 22%, 24%, 55% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Rest of the HTML remains the same as previous code -->
+</body>
+</html>

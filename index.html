@@ -168,3 +168,75 @@
 </body>
 </html>
 
+<style>
+/* Add these styles to the existing CSS */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #8A8FFF;
+    transition: all 0.3s ease;
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.icon-box:hover {
+    border-color: #8A8FFF;
+    box-shadow: 0 0 20px rgba(138, 143, 255, 0.5);
+}
+
+.icon-text {
+    font-size: 1.2em;
+    font-family: 'Courier New', monospace;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                url('keyboard-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    color: #8A8FFF;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+</style>
+
+<div class="logo">techapplez</div>
+<div class="icon-grid">
+    <a href="#about" class="icon-item">
+        <div class="icon-box">
+            <i class="fas fa-info"></i>
+        </div>
+        <span class="icon-text">About us</span>
+    </a>
+    <!-- Repeat for other menu items -->
+</div>

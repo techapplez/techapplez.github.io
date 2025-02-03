@@ -4,13 +4,15 @@
 }
 
 * {
-  box-sizing: border-box;
-  font-family: font;
+    box-sizing: border-box;
+    font-family: font;
 }
 
 body, html {
     height: 100%;
     background-color: #000000;
+    margin: 0;
+    padding: 0;
 }
 
 .background-image {
@@ -22,6 +24,9 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .background-content {
@@ -39,22 +44,67 @@ body, html {
     width: 80%;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .button {
     text-decoration: none;
     color: #f1f1f1;
     background: linear-gradient(90deg, rgb(3, 145, 8) 0%, rgb(1, 107, 152) 100%);
-    border: 1px #4c00ff;
+    border: 1px solid #4c00ff;
     border-radius: 15px;
     padding: 15px;
-    width:  100px;
-    height:  100px;
+    width: 100px;
+    height: 100px;
     text-align: center;
     font-size: 3rem;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.links {
-    gap: 72px;
-    display: flex;
+.typing-container {
+    display: inline-block;
+    text-align: left;
+    padding: 15px;
+}
+
+.typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    letter-spacing: 0.05em;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    animation: typing 3.5s steps(1, 9) forwards;
+}
+
+.typing-text::after {
+    content: '█';
+    position: absolute;
+    right: -0.1em;
+    color: #fff;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { opacity: 0 }
+    50% { opacity: 1 }
 }
